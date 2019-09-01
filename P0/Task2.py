@@ -20,14 +20,19 @@ Print a message:
 "<telephone number> spent the longest time, <total time> seconds, on the phone during
 September 2016.".
 """
+
+
 def get_longest_call(calls):
     # Create and populate a defaultdict with phonenumbers and call times.
     phonenumbers = defaultdict(list)
-    for call in calls:
-        phonenumbers[call[0]].append(int(call[-1]))
-        phonenumbers[call[0]].append(int(call[-1]))
-    call_times = {k:sum(v) for k,v in phonenumbers.items()}
+    for line in calls:
+        number_in, number_out, duration = line[0], line[1], int(line[-1])
+        phonenumbers[number_in].append(duration)
+        phonenumbers[number_out].append(duration)
+    call_times = {k: sum(v) for k, v in phonenumbers.items()}
     max_key = max(call_times, key=call_times.get)
     return "{} spent the longest time, {} seconds, on the phone during September 2016.".format(max_key, call_times[max_key])
 
+
 print(get_longest_call(calls))
+# Big O: O(n)

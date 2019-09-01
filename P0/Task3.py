@@ -64,6 +64,7 @@ def get_local_calls_stats():
 
 
 print(get_local_calls_stats())
+# Big O: O(n^2)
 
 
 """

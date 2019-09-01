@@ -19,12 +19,14 @@ Print messages:
 "Last record of calls, <incoming number> calls <answering number> at time <time>, lasting <during> seconds"
 """
 
+
 def format_head(texts):
     # Check records has the right format
     assert len(texts[0]) == 3
     in_num, aws_num, time = texts[0]
     first_text = "First record of texts, {} texts {} at time {}".format(in_num, aws_num, time)
     return first_text
+
 
 def format_tail(calls):
     # Check records has the right format
@@ -33,6 +35,11 @@ def format_tail(calls):
     last_call= "Last record of calls, {} calls {} at time {}, lasting {} seconds".format(in_num, aws_num, time, duration)
     return last_call
 
+
 print(format_head(texts))
 print(format_tail(calls))
 
+'''
+Big O:
+O(1)
+'''

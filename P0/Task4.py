@@ -24,8 +24,12 @@ Print a message:
 <list of numbers>
 The list of numbers should be print out one per line in lexicographic order with no duplicates.
 """
+
+
 def get_telemarketers(calls, texts):
+    # Create set of all outgoing call numbers
     outgoing_num = set(line[0] for line in calls)
+    # Create set of all other numbers
     receiving_num = set(line[1] for line in calls)
     for row in texts:
         receiving_num.add(row[0])
@@ -35,6 +39,6 @@ def get_telemarketers(calls, texts):
     for number in sorted(telemarketers):
         print(number)
 
-#
 
 get_telemarketers(calls, texts)
+# Big O: O(n)
