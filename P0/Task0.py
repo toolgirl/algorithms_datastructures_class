@@ -39,7 +39,4 @@ def format_tail(calls):
 print(format_head(texts))
 print(format_tail(calls))
 
-'''
-Big O:
-O(1)
-'''
+# Big O: O(1)

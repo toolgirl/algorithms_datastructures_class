@@ -31,7 +31,4 @@ def get_number_count(calls, texts):
 
 
 print(get_number_count(calls, texts))
-'''
-Big O:
-O(n)
-'''
+# Big O: O(n)
