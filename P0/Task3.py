@@ -22,7 +22,7 @@ def get_numbers(calls):
     return numbers_called
 
 
-def get_sorted_area_codes():
+def get_area_codes():
     numbers = get_numbers(calls)
     area_codes = []
     for number in numbers:
@@ -37,12 +37,12 @@ def get_sorted_area_codes():
                 if digit == ")":
                     area_codes.append(''.join(num))
                     break
-    return sorted(area_codes)
+    return area_codes
 
 
 def pretty_print_codes():
     # Run the functions to get the data and print it out.
-    sorted_codes = set(get_sorted_area_codes())
+    sorted_codes = sorted(set(get_area_codes()))
     print("The numbers called by people in Bangalore have the following codes:")
     for code in sorted_codes:
         print(code)
@@ -53,7 +53,7 @@ pretty_print_codes()
 
 # Part B:
 def get_local_calls_stats():
-    numbers_called = get_sorted_area_codes()
+    numbers_called = get_area_codes()
     total = len(numbers_called)
     local_count = 0
     for n in numbers_called:
