@@ -25,9 +25,15 @@ Print a message:
 The list of numbers should be print out one per line in lexicographic order with no duplicates.
 """
 def get_telemarketers(calls, texts):
-    outgoing_num = [line[0] for line in calls if line[0] not in line[1]]
-    print(len(outgoing_num))
-# make sets and operate on them.
+    outgoing_num = set(line[0] for line in calls)
+    receiving_num = set(line[1] for line in calls)
+    for row in texts:
+        receiving_num.add(row[0])
+        receiving_num.add(row[1])
+    telemarketers = outgoing_num - receiving_num
+    print("These numbers could be telemarketers: ")
+    for number in sorted(telemarketers):
+        print(number)
 
 #
 
