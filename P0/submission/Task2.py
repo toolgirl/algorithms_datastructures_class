@@ -29,7 +29,9 @@ def get_longest_call(calls):
         number_in, number_out, duration = line[0], line[1], int(line[-1])
         phonenumbers[number_in].append(duration)
         phonenumbers[number_out].append(duration)
+    # Sum the lists of values.
     call_times = {k: sum(v) for k, v in phonenumbers.items()}
+    # Return the key of the max value.
     max_key = max(call_times, key=call_times.get)
     return "{} spent the longest time, {} seconds, on the phone during September 2016.".format(max_key, call_times[max_key])
 
