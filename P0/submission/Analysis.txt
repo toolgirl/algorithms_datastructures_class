@@ -1,0 +1,29 @@
+
+Big O analysis of Project 0 by task.
+
+Task0.py:
+	Time complexity: O(1) - The size of the file makes no difference to the number of times it has to get accessed since we are only accessing the first and the last records.
+	- I chose to access the list of lists the file was turned into directly with list indexing as that seemed the most expedient in this situation.
+	Space complexity: O(n) This is the size of the file loaded into memory. Since it still all gets loaded in. If we used f.readline() it would be O(1) at least for the first record since we could quit after that and would therefore not need to read the whole file in.
+
+Task1.py:
+	Time complexity: O(n) - Every record has to be accessed twice, which would really be O(2n) but since multiplyers are negligligable it still gets written as O(n). The set the length of the set gets accessed once and so does the print statement. But all these are just adding constants so I would say it still is O(n).
+	- I am using sets because they are hashtables and therefore have an O(1) time complexity for checking membership.
+	Space complexity: O(n) - The files get loaded in and get accessed and a set of unique numbers get created. However that is still in the order of 2n as far as space is concenrned so we are back to O(n). Regarding space a set lets me have as minimal repetition of the lists I'm going through.
+
+
+Task2.py:
+	Time complexity: O(n) - Every record has to be accessed twice, then every key of the dictionary has to be accessed once to sum it and then the dict has to be operated on for the max function and then it has to be printed out.
+	- I'm using a default dictionaries because they have an O(n) for lookup operations and since I have to check for every number if it is there I thought this was a good choice. The default dict I chose because its easy to have the values be lists which allows me later to sum accross all the values.
+	Space complexity: O(n) - Dictionaries a space complexity of more or less O(n).
+
+Task3.py:
+	Time complexity: O(n^2) - Every record has to be accessed twice to get the numbers, then it has to be accessed again and looped through each item in the list of lists until the area code is complete.
+	- I chose not to make the list of numbers a set because that allowed me to reuse the get_area_codes() function in task B.
+	Space complexity: O(n) - We are  creating complete duplicates of the records but that would only make it O(2n) which still reduces to O(n)
+
+
+Task4.py:
+	Time complexity: O(n) - Every record has to be accessed twice to get added to the sets. The set opeartions are probably at least O(n) which would make O(2n) but that still leaves me with O(n)
+	- I chose to use sets because they are a builtin data structure that specifically are used for membership testing and eliminating duplicate entries. The set itself has a time complexity of O(1) for accessing single entries but since I still have to add items by grabbing them from the list of lists of records and then do operations on the set this adds complexity but on the order of linear addition not squared.
+	Space complexity: O(n) - While I am creating duplicates I am not creating more than one duplicate and that one is reduced to only unique entries so that is as space efficient as possible.
